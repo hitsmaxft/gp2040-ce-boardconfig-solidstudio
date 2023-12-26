@@ -38,8 +38,7 @@ jobs:
       with:
         fetch-depth: 0
         fetch-tags: true
-        sparse-checkout: 'configs/PicoSolid'
-        sparse-checkout-cone-mode: false
+        path: 'configs/PicoSolid'
 
     - name: Setup SDK pipeline
       uses: Fortinbra/RaspberryPiPicoBuild@v1

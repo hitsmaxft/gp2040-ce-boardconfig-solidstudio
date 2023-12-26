@@ -30,13 +30,16 @@ jobs:
     - name: Checkout GP2040-CE
       uses: actions/checkout@v3
       with:
+        repository: OpenStickCommunity/GP2040-CE
         fetch-depth: 0
         fetch-tags: true
-    - name: Checkout GP2040-CE
+    - name: Checkout GP2040-CE-Soli
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
         fetch-tags: true
+        sparse-checkout: 'configs/PicoSolid'
+        sparse-checkout-cone-mode: false
 
     - name: Setup SDK pipeline
       uses: Fortinbra/RaspberryPiPicoBuild@v1

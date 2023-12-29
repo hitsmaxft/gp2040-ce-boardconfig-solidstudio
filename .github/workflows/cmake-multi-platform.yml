@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        GP2040_BOARDCONFIG: [PicoSolid]
+        GP2040_BOARDCONFIG: [Pico PicoSolid]
 
     steps:
     #Global Setup
@@ -33,6 +33,7 @@ jobs:
         repository: OpenStickCommunity/GP2040-CE
         fetch-depth: 0
         fetch-tags: true
+        ref: 'v0.7.6'
     - name: Checkout GP2040-CE-Soli
       uses: actions/checkout@v3
       with:
@@ -54,11 +55,11 @@ jobs:
       run : cat /proc/cpuinfo  | grep processor | wc -l
       #End Global Setup
 
-    - name: PicoSolid Build Configure CMake
+    - name: Build Configure CMake
       shell: bash
       run: PICO_SDK_PATH=${{github.workspace}}/pico-sdk GP2040_BOARDCONFIG=${{ matrix.GP2040_BOARDCONFIG }} SKIP_WEBBUILD=TRUE cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-    - name: PicoSolid Build
+    - name: Build
       shell: bash
       run: GP2040_BOARDCONFIG=${{ matrix.GP2040_BOARDCONFIG }} cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --parallel ${{steps.core_count.outputs.output}}
 

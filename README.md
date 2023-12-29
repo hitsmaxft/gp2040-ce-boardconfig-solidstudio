@@ -1,7 +1,7 @@
 # gp2040-ce board config for solid studio hitbox a4 
 
 GP2040-CE solidstudio A4 hitbox 的固件
-这个板子没有 led 支撑, 因此 led 相关 pin 都置空了
+这个板子没有 led ，因此 led 相关 pin 都置空了
 
 主要改动点
 

@@ -22,6 +22,5 @@ bin mapping
 
 * function: 14
 * usb passthrough :  1
-* turbo led: 15
-
+* turbo led: -1
 

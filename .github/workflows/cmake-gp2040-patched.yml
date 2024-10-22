@@ -1,4 +1,4 @@
-name: CMake-MyPatches
+name: CMake-GP2040-CE-patched
 
 on:
   push:
